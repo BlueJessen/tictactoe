@@ -42,9 +42,16 @@ section {
 }
 
 .player-section1 {
-
+background-image: url(assets/snek.svg);
+background-repeat: no-repeat;
+background-size: 50%;
+background-position: center;
 }
 .player-section2 {
+  background-image: url(assets/unicornhead.svg);
+  background-repeat: no-repeat;
+  background-size: 50%;
+  background-position: center;
 
 }
 .tictactoe {
