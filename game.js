@@ -7,12 +7,16 @@ class Game {
     board = [[0,0,0],[0,0,0],[0,0,0]];
   }
   checkWinCondition(board) {
-  //if all of the first array second or third array
-  //is the same img then the player with that icon winds
-  //if any of the corresponding index on each of the arrays
-  //has the same image then that player wins.
-  //if an index is consectuive 123 or 321 in the 3 arrays have same image then
-  // the player with that icon wins. 
+  var player1Check = '';
+  var player2Check = '';
+  for (var i = 0; i < board.length; i++) {
+      this.checkWinCondition(board[i]);
+      if(board[i] === player1.icon) {
+        player1Check += board[i];
+      }else if (board[i] === player2.icon) {
+        player2Check += board[i];
+      }
+  }
   }
 }
 
