@@ -8,6 +8,9 @@ class Player {
   increaseWins(){
     this.wins++;
   }
+  taketurn() {
+    
+  }
 }
 
 module.exports = Player;
