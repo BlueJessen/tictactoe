@@ -55,8 +55,8 @@ class Game {
      }
 }
 
-  newGame() {
-    for(var i = 0; i < this.players.length) {
+  resetGame() {
+    for(var i = 0; i < this.players.length; i++) {
       this.players[i].choices = '';
       this.win = false;
     }
