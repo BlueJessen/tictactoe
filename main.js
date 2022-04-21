@@ -1,4 +1,4 @@
-const Game = require('./game');
+// const Game = require('./game');
 
 //Query Selectors
 
@@ -13,6 +13,8 @@ var tictactoe = new Game();
 
 tictactoe.addPlayer(1,"X");
 tictactoe.addPlayer(2,"0");
+
+
 
 
 console.log(tictactoe.gameBoard);
