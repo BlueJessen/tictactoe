@@ -1,4 +1,4 @@
-// const Player = require('./player');
+
 class Game {
   constructor() {
     this.players = [];
@@ -31,9 +31,7 @@ class Game {
   checkWinCondition() {
     var winCheck = 0;
     for(var k = 0; k < this.players.length; k++) {
-
       for (var i = 0; i < this.winConditions.length; i++) {
-
         for(var j = 0; j < this.winConditions[i].length; j++ ) {
           if(this.players[k].choice.includes(this.winConditions[i][j])) {
             winCheck++;
@@ -47,8 +45,6 @@ class Game {
       }
   }
 
-
-
    winAction(id) {
      this.win = true;
      for(var i = 0; i < this.players.length; i++){
@@ -57,11 +53,13 @@ class Game {
          console.log(`Player ${this.player[i].id} Wins!`);
        }
      }
-
 }
 
+  newGame() {
+    for(var i = 0; i < this.players.length) {
+      this.players[i].choices = '';
+      this.win = false;
+    }
+  }
+
 }
-
-
-
-// module.exports = Game;
