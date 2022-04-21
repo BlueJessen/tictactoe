@@ -8,7 +8,7 @@ class Player {
   increaseWins(){
     this.wins++;
   }
-  taketurn() {
+  taketurn(choice) {
     
   }
 }
