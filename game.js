@@ -2,7 +2,6 @@
 class Game {
   constructor() {
     this.players = [];
-    // this.gameBoard = [[0,0,0],[0,0,0],[0,0,0]];
     this.win = false;
     this.winConditions = [['00','10','20'],
                           ['01','11','21'],
@@ -55,7 +54,7 @@ class Game {
      for(var i = 0; i < this.players.length; i++){
        if(id === this.players[i].id) {
          this.players[i].increaseWins();
-         console.log(`Player ${this.players[i].id} Wins!`);
+         console.log(`Player ${this.player[i].id} Wins!`);
        }
      }
 
