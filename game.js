@@ -2,6 +2,7 @@
 class Game {
   constructor() {
     this.players = [];
+    this.playerTurn = 1;
     this.win = false;
     this.winConditions = [['00','10','20'],
                           ['01','11','21'],
@@ -12,7 +13,13 @@ class Game {
                           ['00','11','22'],
                           ['22','11','00']];
   }
-
+  turnSwitch(){
+    if (this.playerTurn === 1){
+      this.playerTurn = 2;
+    }else if(this.playerTurn === 2){
+      this.playerTurn = 1;
+    }
+  }
 
   addPlayer(id, icon) {
     var player = new Player(id,icon);
@@ -22,16 +29,20 @@ class Game {
   takeTurn(id, choice) {
     for (var i = 0; i < this.players.length; i++) {
         if (id === this.players[i].id) {
-          this.players[i].choices += `${choice[0]}${choice[1]}`;
+          this.players[i].choices += `${choice}`;
      }
    }
+   this.turnSwitch();
     this.checkWinCondition();
   }
 
   checkWinCondition() {
     var winCheck = 0;
+    //iterates through players
     for(var k = 0; k < this.players.length; k++) {
+      //iterates through larger winConditions array
       for (var i = 0; i < this.winConditions.length; i++) {
+        //iterates through individual winconditions
         for(var j = 0; j < this.winConditions[i].length; j++ ) {
           if(this.players[k].choice.includes(this.winConditions[i][j])) {
             winCheck++;

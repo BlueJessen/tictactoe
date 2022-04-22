@@ -8,11 +8,18 @@ tictactoeBoard.addEventListener('click', getEvent);
 var tictactoe = new Game();
 
 //Data Functions
-
 function getEvent(event) {
   updateBoard(event.target);
-  console.log(event.target);
+  playGame(event.target.id);
 }
+
+function playGame(choice) {
+if( tictactoe.win = false) {
+    tictactoe.takeTurn(tictactoe.playerTurn,choice);
+ }
+ tictactoe.resetGame();
+}
+
 //get id of quedrant
 //update quadrant display
 //update player choices
