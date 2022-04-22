@@ -7,6 +7,10 @@ tictactoeBoard.addEventListener('click', getEvent);
 //Global Variables
 var tictactoe = new Game();
 
+this.tictactoe.addPlayer(1,"X");
+this.tictactoe.addPlayer(2,"0");
+this.tictactoe.players[0].choice = '0011010212';
+
 //Data Functions
 function getEvent(event) {
   updateBoard(event.target);
@@ -14,7 +18,7 @@ function getEvent(event) {
 }
 
 function playGame(choice) {
-if( tictactoe.win = false) {
+if( tictactoe.gameEnd === false) {
     tictactoe.takeTurn(tictactoe.playerTurn,choice);
  }
  tictactoe.resetGame();

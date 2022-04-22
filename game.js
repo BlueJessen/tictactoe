@@ -3,16 +3,17 @@ class Game {
   constructor() {
     this.players = [];
     this.playerTurn = 1;
-    this.win = false;
-    this.winConditions = [['00','10','20'],
-                          ['01','11','21'],
-                          ['02','12','22'],
-                          ['00','01','02'],
-                          ['10','11','12'],
-                          ['20','21','22'],
-                          ['00','11','22'],
-                          ['22','11','00']];
+    this.gameEnd = false;
+    this.winConditions = ['00','10','20',
+                          '01','11','21',
+                          '02','12','22',
+                          '00','01','02',
+                          '10','11','12',
+                          '20','21','22',
+                          '00','11','22',
+                          '22','11','00'];
   }
+
   turnSwitch(){
     if (this.playerTurn === 1){
       this.playerTurn = 2;
@@ -30,46 +31,39 @@ class Game {
     for (var i = 0; i < this.players.length; i++) {
         if (id === this.players[i].id) {
           this.players[i].choices += `${choice}`;
+          this.checkWinCondition(i);
      }
    }
    this.turnSwitch();
-    this.checkWinCondition();
   }
 
-  checkWinCondition() {
-    var winCheck = 0;
-    //iterates through players
-    for(var k = 0; k < this.players.length; k++) {
+  checkWinCondition(index) {
+      var winCheck = 0;
       //iterates through larger winConditions array
       for (var i = 0; i < this.winConditions.length; i++) {
-        //iterates through individual winconditions
-        for(var j = 0; j < this.winConditions[i].length; j++ ) {
-          if(this.players[k].choice.includes(this.winConditions[i][j])) {
+          if(this.players[index].choice.includes(this.winConditions[i])) {
             winCheck++;
-            }
-          if(winCheck === 3){
-            this.winAction(this.players[k].id);
-            winCheck = 0;
-            }
+          }else{
+            winCheck--;
           }
-        }
-      }
+            this.winAction(winCheck, index);
+            }
   }
 
-   winAction(id) {
-     this.win = true;
-     for(var i = 0; i < this.players.length; i++){
-       if(id === this.players[i].id) {
-         this.players[i].increaseWins();
-         console.log(`Player ${this.player[i].id} Wins!`);
+   winAction(score, index) {
+     if (score === 3) {
+     this.gameEnd = true;
+         this.players[index].increaseWins();
+         console.log(`Player ${this.players[index].id} Wins!`);
+         this.resetGame();
        }
-     }
+       // this.checkForCatsGame();
 }
 
   resetGame() {
     for(var i = 0; i < this.players.length; i++) {
-      this.players[i].choices = '';
-      this.win = false;
+      this.players[i].choice = '';
+      this.gameEnd = false;
     }
   }
 
