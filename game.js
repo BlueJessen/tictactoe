@@ -14,8 +14,8 @@ class Game {
                           'G','E','C'];
   }
 
-  turnSwitch(){
-    if (this.playerTurn === 0){
+  turnSwitch() {
+    if (this.playerTurn){
       this.playerTurn = 1;
     }else if(this.playerTurn === 1){
       this.playerTurn = 0;
@@ -37,9 +37,9 @@ class Game {
       var winCheck = 0;
       //iterates through larger winConditions array
       for (var i = 0; i < this.winConditions.length; i++) {
-          if(this.players[index].choice.includes(this.winConditions[i]) ) {
+          if (this.players[index].choice.includes(this.winConditions[i])) {
             winCheck++;
-          }else {
+          }else{
             winCheck = 0;
           }
           this.winAction(winCheck, index);
@@ -59,7 +59,7 @@ class Game {
 }
 
   resetGame() {
-    for(var i = 0; i < this.players.length; i++) {
+    for (var i = 0; i < this.players.length; i++) {
       this.players[i].choice = '';
       this.gameEnd = false;
     }
@@ -68,7 +68,6 @@ class Game {
   checkForCatsGame() {
     if (this.players[0].choice.length === 5 || this.players[1].choice.length === 5) {
       this.gameEnd = true;
-      console.log("Its a Draw!");
       this.resetGame();
     }
   }

@@ -18,9 +18,8 @@ function getEvent(event) {
 
 function playGame(quad) {
   if (!tictactoe.gameEnd) {
-  console.log(tictactoe.playerTurn);
     tictactoe.takeTurn(tictactoe.playerTurn, quad);
- }
+  }
 }
 
 //Dom Functions
