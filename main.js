@@ -7,29 +7,23 @@ tictactoeBoard.addEventListener('click', getEvent);
 //Global Variables
 var tictactoe = new Game();
 
-this.tictactoe.addPlayer(1,"X");
-this.tictactoe.addPlayer(2,"0");
-this.tictactoe.players[0].choice = '0011010212';
+this.tictactoe.addPlayer(1,"assets/snek.svg");
+this.tictactoe.addPlayer(2,"assets/mushroom.svg");
 
 //Data Functions
 function getEvent(event) {
-  updateBoard(event.target);
+  updateBoard(event.target, tictactoe.playerTurn);
   playGame(event.target.id);
 }
 
-function playGame(choice) {
-if( tictactoe.gameEnd === false) {
-    tictactoe.takeTurn(tictactoe.playerTurn,choice);
+function playGame(quad) {
+  if (!tictactoe.gameEnd) {
+  console.log(tictactoe.playerTurn);
+    tictactoe.takeTurn(tictactoe.playerTurn, quad);
  }
- tictactoe.resetGame();
 }
 
-//get id of quedrant
-//update quadrant display
-//update player choices
-//checkWinConditions
-
 //Dom Functions
-function updateBoard(quadrant) {
-quadrant.innerHTML = `<img src= "assets/snek.svg"></img>`;
+function updateBoard(quadrant, index) {
+quadrant.innerHTML = `<img src=${tictactoe.players[index].token}></img>`;
 }

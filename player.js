@@ -2,7 +2,7 @@ class Player {
   constructor(id, token){
     this.id = id;
     this.token = token;
-    this.choice = '';
+    this.choice ='';
     this.wins = 0;
   }
 
