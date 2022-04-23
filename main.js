@@ -2,6 +2,10 @@
 //Query Selectors
 var tictactoeBoard = document.querySelector("main");
 var winResultText = document.querySelector(".event-text")
+var player1WinsText = document.querySelector("#player1");
+var player2WinsText = document.querySelector("#player2");
+var turnTextPlayer1 = document.querySelector(".player-section1-turn");
+var turnTextPlayer2 = document.querySelector(".player-section2-turn");
 // Event Listeners
 tictactoeBoard.addEventListener('click', getEvent);
 
@@ -31,23 +35,35 @@ function playGame(quad) {
 function checkIfGameOver(){
   if(tictactoe.gameEnd) {
     winResult();
-    // tictactoe.resetGame();
-    // resetBoard();
+  var endGameTimeout = setTimeout(resetBoard, 3000);
   }
 }
 
 //Dom Functions
 function updateBoard(quadrant, index) {
+if (turnTextPlayer1.innerText === "Player 1's Turn"){
+  turnTextPlayer1.innerText = "Player 1";
+  turnTextPlayer2.innerText = "Player 2's Turn";
+}else {
+  turnTextPlayer1.innerText = "Player 1's Turn";
+  turnTextPlayer2.innerText = "Player 2";
+}
 quadrant.innerHTML = `<img width= 70% src=${tictactoe.players[index].token}></img>`;
 }
 
 function winResult() {
   toggleMainView();
   winResultText.innerText = tictactoe.gameResult;
+  player1WinsText.innerText = `Wins ${tictactoe.players[0].wins}`;
+  player2WinsText.innerText = `Wins ${tictactoe.players[1].wins}`;
 }
 
 function resetBoard() {
+  tictactoe.resetGame()
   toggleMainView();
+  for (var i = 0; i < tictactoeBoard.children.length; i++) {
+    tictactoeBoard.children[i].innerHTML = '';
+  }
 }
 
 function toggleMainView() {

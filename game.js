@@ -30,22 +30,25 @@ class Game {
 
   takeTurn(index, quad) {
           this.players[index].choice += quad;
-          console.log("choice",this.players[index].choice);
           this.checkWinCondition(index);
           this.turnSwitch();
   }
 
   checkWinCondition(index) {
+      var counter = 0;
       var winCheck = 0;
       for (var i = 0; i < this.winConditions.length; i++) {
           if (this.players[index].choice.includes(this.winConditions[i])) {
             winCheck++;
+          }else if(counter === 3) {
+          winCheck = 0;
           }else{
-            winCheck = 0;
+          winCheck = 0;
+        }
+        counter++;
+        this.winAction(winCheck, index);
           }
-          this.winAction(winCheck, index);
-          }
-            this.checkForCatsGame();
+          this.checkForCatsGame();
   }
 
    winAction(score, index) {

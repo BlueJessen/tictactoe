@@ -7,6 +7,10 @@ html {
   font-family: "Open Sans";
 }
 
+h2 {
+  font-size: large;
+}
+
 body {
   margin: 0;
   height:100%;
@@ -39,9 +43,19 @@ section {
   margin-left: 10px;
   margin-top: 10px;
   text-align: center;
-  font-weight: 600;
+  font-weight: 700;
   font-size: x-large;
 }
+
+.fade-in {
+  animation: fadeIn 2s;
+}
+
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    30%{opacity: 0;}
+    100% {opacity: 1;}
+  }
 
 .event-text {
   height: 80%;
@@ -57,11 +71,12 @@ section {
 }
 
 .player-section1 {
-background-image: url(assets/snek.svg);
-background-repeat: no-repeat;
-background-size: 50%;
-background-position: center;
+  background-image: url(assets/snek.svg);
+  background-repeat: no-repeat;
+  background-size: 50%;
+  background-position: center;
 }
+
 .player-section2 {
   background-image: url(assets/mushroom.svg);
   background-repeat: no-repeat;
@@ -76,6 +91,11 @@ background-position: center;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.tictactoe > *:hover {
+  background: url('assets/.mushroom.svg');
+
 }
 
 .quad1 {

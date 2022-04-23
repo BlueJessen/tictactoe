@@ -8,8 +8,11 @@
     <header>Tic Tac Toe</header>
     <body>
       <div class="wrapper">
-        <section class= "player-section1">Player 1</section>
-        <p class = "event-text hidden">  Example Wins! </p>
+        <section class= "player-section1">
+          <h1 class="player-section1-turn">Player 1's Turn</h1>
+          <h2 id="player1">Wins 0</h2>
+        </section>
+        <p class = "event-text fade-in hidden">  Example Wins! </p>
         <main>
           <div class="tictactoe quad1"id= "A">
           </div>
@@ -30,7 +33,10 @@
           <div class="tictactoe quad9"id= "I">
           </div>
         </main>
-        <section class= "player-section2">Player 2</section>
+        <section class= "player-section2">
+          <h1 class="player-section2-turn">Player 2</h1>
+          <h2 id="player2">Wins 0</h2>
+        </section>
       </div>
     </body>
   <script src="player.js"></script>
