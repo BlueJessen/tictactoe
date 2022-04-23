@@ -12,9 +12,13 @@ this.tictactoe.addPlayer(2,"assets/mushroom.svg");
 
 //Data Functions
 function getEvent(event) {
-  updateBoard(event.target, tictactoe.playerTurn);
-  playGame(event.target.id);
+  console.log(event.target.id);
+if (!tictactoe.players[1].choice.includes(event.target.id) && !tictactoe.players[0].choice.includes(event.target.id)){
+    updateBoard(event.target, tictactoe.playerTurn);
+    playGame(event.target.id);
+  }
 }
+
 
 function playGame(quad) {
   if (!tictactoe.gameEnd) {
@@ -22,7 +26,25 @@ function playGame(quad) {
   }
 }
 
+function checkIfGameOver(){
+  if(tictactoe.gameEnd) {
+    winResult();
+    tictactoe.resetGame();
+    resetBoard();
+  }
+}
+
+
+
 //Dom Functions
 function updateBoard(quadrant, index) {
-quadrant.innerHTML = `<img src=${tictactoe.players[index].token}></img>`;
+quadrant.innerHTML = `<img width= 70% src=${tictactoe.players[index].token}></img>`;
+}
+
+function winResult() {
+
+}
+
+function resetBoard() {
+
 }

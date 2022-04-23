@@ -15,7 +15,7 @@ body {
 header {
   width: 100%;
   border: 0;
-  height: 5%;
+  height: 10%;
   text-align: center;
   background-color: #073B4C;
   color: white;
@@ -42,6 +42,16 @@ section {
   font-size: x-large;
 }
 
+.event-text {
+  height: 80%;
+  width: 40%;
+  background-color: rgba(225, 225, 225, .9);
+}
+
+.hidden {
+  display: none;
+}
+
 .player-section1 {
 background-image: url(assets/snek.svg);
 background-repeat: no-repeat;
@@ -49,15 +59,19 @@ background-size: 50%;
 background-position: center;
 }
 .player-section2 {
-  background-image: url(assets/unicornhead.svg);
+  background-image: url(assets/mushroom.svg);
   background-repeat: no-repeat;
-  background-size: 5%;
+  background-size: 50%;
   background-position: center;
-
+  margin-left: -20px;
 }
+
 .tictactoe {
   background-color: #118AB2;
   border: 5px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .quad1 {

@@ -6,6 +6,10 @@ class Player {
     this.wins = 0;
   }
 
+  addChoice(quad) {
+    this.choice += quad;
+  }
+
   increaseWins(){
     this.wins++;
   }

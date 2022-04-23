@@ -4,6 +4,7 @@ class Game {
     this.players = [];
     this.playerTurn = 0;
     this.gameEnd = false;
+    this.gameResult = '';
     this.winConditions = ['A','B','C',
                           'D','E','F',
                           'G','H','I',
@@ -15,7 +16,7 @@ class Game {
   }
 
   turnSwitch() {
-    if (this.playerTurn){
+    if (this.playerTurn === 0){
       this.playerTurn = 1;
     }else if(this.playerTurn === 1){
       this.playerTurn = 0;
@@ -28,14 +29,14 @@ class Game {
   }
 
   takeTurn(index, quad) {
-          this.players[index].choice += `${quad}`;
+          this.players[index].choice += quad;
+          console.log("choice",this.players[index].choice);
           this.checkWinCondition(index);
           this.turnSwitch();
   }
 
   checkWinCondition(index) {
       var winCheck = 0;
-      //iterates through larger winConditions array
       for (var i = 0; i < this.winConditions.length; i++) {
           if (this.players[index].choice.includes(this.winConditions[i])) {
             winCheck++;
@@ -51,14 +52,13 @@ class Game {
      if (score === 3 ) {
      this.gameEnd = true;
          this.players[index].increaseWins();
-         console.log(`Player ${this.players[index].id} Wins!`);
-         console.log("57",this.players[index].choice);
-         this.resetGame();
+         this.gameResult = `Player ${this.players[index].id} Wins!`;
        }
        this.checkForCatsGame();
-}
+     }
 
   resetGame() {
+      console.log("checkWin",this.players[0].choice);
     for (var i = 0; i < this.players.length; i++) {
       this.players[i].choice = '';
       this.gameEnd = false;
@@ -66,9 +66,10 @@ class Game {
   }
 
   checkForCatsGame() {
+      console.log("catsGame",this.players[0].choice);
     if (this.players[0].choice.length === 5 || this.players[1].choice.length === 5) {
       this.gameEnd = true;
-      this.resetGame();
+      this.gameResult = `It was a draw! Too Bad...`;
     }
   }
 
