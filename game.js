@@ -58,7 +58,6 @@ class Game {
      }
 
   resetGame() {
-      console.log("checkWin",this.players[0].choice);
     for (var i = 0; i < this.players.length; i++) {
       this.players[i].choice = '';
       this.gameEnd = false;
@@ -66,7 +65,6 @@ class Game {
   }
 
   checkForCatsGame() {
-      console.log("catsGame",this.players[0].choice);
     if (this.players[0].choice.length === 5 || this.players[1].choice.length === 5) {
       this.gameEnd = true;
       this.gameResult = `It was a draw! Too Bad...`;
