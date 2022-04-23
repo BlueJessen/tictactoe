@@ -5,14 +5,15 @@ class Game {
     this.playerTurn = 0;
     this.gameEnd = false;
     this.gameResult = '';
-    this.winConditions = ['A','B','C',
-                          'D','E','F',
-                          'G','H','I',
-                          'A','D','G',
-                          'B','E','H',
-                          'C','F','I',
-                          'A','E','I',
-                          'G','E','C'];
+    this.gameBoard = [0,0,0,0,0,0,0,0,0];
+    this.winConditions = {combo1:['A','B','C'],
+                          combo2:['D','E','F'],
+                          combo3:['G','H','I'],
+                          combo4:['A','D','G'],
+                          combo5:['B','E','H'],
+                          combo6:['C','F','I'],
+                          combo7:['A','E','I'],
+                          combo8:['G','E','C'];
   }
 
   turnSwitch() {
@@ -35,17 +36,7 @@ class Game {
   }
 
   checkWinCondition(index) {
-      var counter = 0;
-      var winCheck = 0;
-      for (var i = 0; i < this.winConditions.length; i++) {
-          if (this.players[index].choice.includes(this.winConditions[i])) {
-            winCheck++;
-          }else if(counter === 3) {
-          winCheck = 0;
-          }else{
-          winCheck = 0;
-        }
-        counter++;
+        if(this.players[index].choice.includes(this.combo1.value){
         this.winAction(winCheck, index);
           }
           this.checkForCatsGame();
