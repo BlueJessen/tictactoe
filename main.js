@@ -11,7 +11,6 @@ tictactoeBoard.addEventListener('click', getEvent);
 
 //Global Variables
 var tictactoe = new Game();
-
 this.tictactoe.addPlayer("assets/snek.svg", "X");
 this.tictactoe.addPlayer("assets/mushroom.svg", "O");
 
@@ -27,7 +26,6 @@ function getEvent(event) {
   playGame(choice);
 }
 
-
 function playGame(playerChoice) {
   if (!tictactoe.gameEnd) {
     tictactoe.takeTurn(playerChoice);
@@ -37,7 +35,7 @@ function playGame(playerChoice) {
 
 function checkIfGameOver(){
   if(tictactoe.gameEnd) {
-    winResult();
+  winResult();
   var endGameTimeout = setTimeout(resetBoard, 3000);
   }
 }
