@@ -16,14 +16,16 @@ this.tictactoe.addPlayer("assets/mushroom.svg", "O");
 
 //Data Functions
 function getEvent(event) {
-    updateBoard(event.target);
     var choice = 0;
     for( var i =0; i < tictactoeBoard.children.length; i++) {
-      if (event.target === tictactoeBoard.children[i]) {
+      if (event.target === tictactoeBoard.children[i] && tictactoe.board[i]=== null) {
         choice = i;
       }
-  }
-  playGame(choice);
+    }
+        if(tictactoe.board[choice]=== null){
+          updateBoard(event.target);
+          playGame(choice);
+    }
 }
 
 function playGame(playerChoice) {
