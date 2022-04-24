@@ -39,7 +39,6 @@ class Game {
   checkWinCondition() {
     for (var i = 0; i < this.winConditions.length; i++) {
       var indices = this.winConditions[i];
-      
       var checkSet = new Set([this.board[indices[0]], this.board[indices[1]], this.board[indices[2]]]);
       if (checkSet.size === 1 && (checkSet.has("X") || checkSet.has("O"))) {
           this.winAction(this.board[indices[0]]);
@@ -49,7 +48,6 @@ class Game {
   }
 
   winAction(innerToken) {
-    console.log("51", this.gameEnd);
     this.gameEnd = true;
     if (innerToken === "X") {
       this.players[0].increaseWins();
@@ -61,10 +59,8 @@ class Game {
     }
   }
 
-
   resetGame() {
     for (var i = 0; i < this.players.length; i++) {
-      this.players[i].choice = '';
       this.gameEnd = false;
     }
     this.board = [null, null, null, null, null, null, null, null, null];
