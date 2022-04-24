@@ -12,22 +12,25 @@ tictactoeBoard.addEventListener('click', getEvent);
 //Global Variables
 var tictactoe = new Game();
 
-this.tictactoe.addPlayer(1,"assets/snek.svg");
-this.tictactoe.addPlayer(2,"assets/mushroom.svg");
+this.tictactoe.addPlayer("assets/snek.svg", "X");
+this.tictactoe.addPlayer("assets/mushroom.svg", "O");
 
 //Data Functions
 function getEvent(event) {
-  console.log(event.target.id);
-if (!tictactoe.players[1].choice.includes(event.target.id) && !tictactoe.players[0].choice.includes(event.target.id)){
-    updateBoard(event.target, tictactoe.playerTurn);
-    playGame(event.target.id);
+    updateBoard(event.target);
+    var choice = 0;
+    for( var i =0; i < tictactoeBoard.children.length; i++) {
+      if (event.target === tictactoeBoard.children[i]) {
+        choice = i;
+      }
   }
+  playGame(choice);
 }
 
 
-function playGame(quad) {
+function playGame(playerChoice) {
   if (!tictactoe.gameEnd) {
-    tictactoe.takeTurn(tictactoe.playerTurn, quad);
+    tictactoe.takeTurn(playerChoice);
     checkIfGameOver();
   }
 }
@@ -40,15 +43,15 @@ function checkIfGameOver(){
 }
 
 //Dom Functions
-function updateBoard(quadrant, index) {
+function updateBoard(quadrant) {
+  quadrant.innerHTML = `<img width= 70% src=${tictactoe.players[tictactoe.playerTurn].token}></img>`;
 if (turnTextPlayer1.innerText === "Player 1's Turn"){
   turnTextPlayer1.innerText = "Player 1";
   turnTextPlayer2.innerText = "Player 2's Turn";
-}else {
+} else {
   turnTextPlayer1.innerText = "Player 1's Turn";
   turnTextPlayer2.innerText = "Player 2";
 }
-quadrant.innerHTML = `<img width= 70% src=${tictactoe.players[index].token}></img>`;
 }
 
 function winResult() {
