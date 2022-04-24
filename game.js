@@ -39,6 +39,7 @@ class Game {
   checkWinCondition() {
     for (var i = 0; i < this.winConditions.length; i++) {
       var indices = this.winConditions[i];
+      
       var checkSet = new Set([this.board[indices[0]], this.board[indices[1]], this.board[indices[2]]]);
       if (checkSet.size === 1 && (checkSet.has("X") || checkSet.has("O"))) {
           this.winAction(this.board[indices[0]]);

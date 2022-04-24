@@ -23,8 +23,8 @@ function getEvent(event) {
       if (event.target === tictactoeBoard.children[i]) {
         choice = i;
       }
-    playGame(choice);
   }
+  playGame(choice);
 }
 
 
