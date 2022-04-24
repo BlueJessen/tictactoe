@@ -1,0 +1,105 @@
+html {
+  margin: 0;
+  border: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #f7fff6;
+  font-family: "Open Sans";
+}
+
+body {
+  margin: 0;
+  height:100%;
+}
+header {
+  width: 100%;
+  border: 0;
+  height: 5%;
+  text-align: center;
+  background-color: #073B4C;
+  color: white;
+  font-weight: 600;
+  font-size: xx-large;
+}
+main {
+  height: 80%;
+  width: 40%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+
+section {
+  background-color: #FFD166;
+  width: 25%;
+  height: 100%;
+  margin-right: 10px;
+  margin-left: 10px;
+  margin-top: 10px;
+  text-align: center;
+  font-weight: 600;
+  font-size: x-large;
+}
+
+.player-section1 {
+background-image: url(assets/snek.svg);
+background-repeat: no-repeat;
+background-size: 50%;
+background-position: center;
+}
+.player-section2 {
+  background-image: url(assets/unicornhead.svg);
+  background-repeat: no-repeat;
+  background-size: 50%;
+  background-position: center;
+
+}
+.tictactoe {
+  background-color: #118AB2;
+  border: 5px solid black;
+}
+
+.quad1 {
+  border-left: 0px;
+  border-top: 0px;
+}
+
+.quad2 {
+  border-top: 0px;
+}
+
+.quad3 {
+  border-right: 0px;
+  border-top: 0px;
+}
+
+.quad4 {
+  border-left: 0px;
+}
+
+.quad6 {
+  border-right: 0px;
+}
+
+.quad7 {
+  border-left: 0px;
+  border-bottom: 0px;
+}
+
+.quad8 {
+  border-bottom: 0px;
+}
+
+.quad9 {
+  border-right: 0px;
+  border-bottom: 0px;
+}
+
+.wrapper {
+  width: 100%;
+  height: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+}
