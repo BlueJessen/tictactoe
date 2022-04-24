@@ -1,32 +1,68 @@
-const player = require('./player.js');
+
 class Game {
   constructor() {
     this.players = [];
-    this.gameBoard = [[0,0,0],[0,0,0],[0,0,0]];
-    this.win = false;
+    this.playerTurn = 0;
+    this.gameEnd = false;
+    this.gameResult = '';
+    this.gameBoard = [0,0,0,0,0,0,0,0,0];
+    this.winConditions = {combo1:['A','B','C'],
+                          combo2:['D','E','F'],
+                          combo3:['G','H','I'],
+                          combo4:['A','D','G'],
+                          combo5:['B','E','H'],
+                          combo6:['C','F','I'],
+                          combo7:['A','E','I'],
+                          combo8:['G','E','C'];
   }
 
-  initializeGame(gameBoard,player1,player2) {
-    this.gameBoard = [[0,0,0],[0,0,0],[0,0,0]];
-    var player1 = new Player(player1.id, player1.icon);
-    var player2 = new Player(player2.id, player2.icon);
-    this.players.push(player1);
-    this.players.push(player2);
+  turnSwitch() {
+    if (this.playerTurn === 0){
+      this.playerTurn = 1;
+    }else if(this.playerTurn === 1){
+      this.playerTurn = 0;
+    }
   }
-  checkForWin() {
+
+  addPlayer(id, icon) {
+    var player = new Player(id,icon);
+    this.players.push(player);
+  }
+
+  takeTurn(index, quad) {
+          this.players[index].choice += quad;
+          this.checkWinCondition(index);
+          this.turnSwitch();
+  }
+
+  checkWinCondition(index) {
+        if(this.players[index].choice.includes(this.combo1.value){
+        this.winAction(winCheck, index);
+          }
+          this.checkForCatsGame();
+  }
+
+   winAction(score, index) {
+     if (score === 3 ) {
+     this.gameEnd = true;
+         this.players[index].increaseWins();
+         this.gameResult = `Player ${this.players[index].id} Wins!`;
+       }
+       this.checkForCatsGame();
+     }
+
+  resetGame() {
+    for (var i = 0; i < this.players.length; i++) {
+      this.players[i].choice = '';
+      this.gameEnd = false;
     }
-    playGame() {
-      while (this.win === false) {
-        player1.taketurn();
-        this.checkForWin();
-        player2.taketurn();
-        this.checkForWin();
-      }
-      winner(winner);
+  }
+
+  checkForCatsGame() {
+    if (this.players[0].choice.length === 5 || this.players[1].choice.length === 5) {
+      this.gameEnd = true;
+      this.gameResult = `It was a draw! Too Bad...`;
     }
-    winner() {
-      
-    }
+  }
+
 }
-
-module.exports = Game;
