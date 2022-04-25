@@ -44,7 +44,9 @@ class Game {
           this.winAction(this.board[indices[0]]);
       }
     }
-      this.checkForCatsGame();
+    if (!this.gameEnd) {
+          this.checkForCatsGame();
+    }
   }
 
   winAction(innerToken) {
