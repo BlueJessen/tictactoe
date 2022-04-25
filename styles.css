@@ -36,7 +36,7 @@ main {
 }
 
 section {
-  background-color: #FFD166;
+  background-image: url(assets/section-pillar.png);
   width: 25%;
   height: 100%;
   margin-right: 10px;
