@@ -6,13 +6,14 @@ var player1WinsText = document.querySelector("#player1");
 var player2WinsText = document.querySelector("#player2");
 var turnTextPlayer1 = document.querySelector(".player-section1-turn");
 var turnTextPlayer2 = document.querySelector(".player-section2-turn");
+var background = document.querySelector("body");
 // Event Listeners
 tictactoeBoard.addEventListener('click', getEvent);
 
 //Global Variables
 var tictactoe = new Game();
-this.tictactoe.addPlayer("assets/snek.svg", "X");
-this.tictactoe.addPlayer("assets/direwolf.png", "O");
+this.tictactoe.addPlayer("assets/snek.gif", "X");
+this.tictactoe.addPlayer("assets/poop.gif", "O");
 
 //Data Functions
 function getEvent(event) {
@@ -37,6 +38,8 @@ function playGame(playerChoice) {
 
 function checkIfGameOver(){
   if(tictactoe.gameEnd) {
+  background.classList.remove("background");
+  background.classList.add("background-victory");
   var winTimeout = setTimeout(winResult, 1000);
   var endGameTimeout = setTimeout(resetBoard, 3000);
   }
@@ -67,6 +70,9 @@ function resetBoard() {
   for (var i = 0; i < tictactoeBoard.children.length; i++) {
     tictactoeBoard.children[i].innerHTML = '';
   }
+  background.classList.add("background");
+  background.classList.remove("background-victory");
+
 }
 
 function toggleMainView() {

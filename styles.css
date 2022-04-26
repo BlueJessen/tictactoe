@@ -3,6 +3,16 @@ body {
   height:100%;
 }
 
+.background {
+  background-image: url(assets/crowd.png);
+  background-size: 100%;
+}
+
+.background-victory {
+  background-image: url(assets/victory.gif);
+  background-size: 100%;
+}
+
 header {
   width: 100%;
   border: 0;
@@ -14,12 +24,12 @@ header {
   font-size: x-large;
 }
 
+
 html {
   margin: 0;
   border: 0;
   width: 100%;
   height: 100%;
-  background-color: #f7fff6;
   font-family: "MedievalSharp";
 }
 
@@ -60,10 +70,18 @@ section {
     100% {opacity: 1;}
   }
 
+  .animation {
+    animation: 3s;
+  }
+@keyframes {
+  0% {opacity: 1;}
+  100% {opacity: 0;}
+}
+
 .event-text {
   height: 80%;
   width: 40%;
-  background-color: rgba(225, 225, 225, .9);
+  background-color: rgba(225, 225, 225, .6);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -73,16 +91,12 @@ section {
   display: none;
 }
 
-.player-section1 {
-  /* background-image: url(assets/snek.svg); */
-}
-
-.player-section2 {
-  /* background-image: url(assets/direwolf.png); */
+.player-icon1 {
+  background-image: url(assets/medusaicon.png);
 }
 
 .tictactoe {
-  background-color: #118AB2;
+  background-color: rgba(225, 225, 225, .6);
   border: 5px solid black;
   display: flex;
   justify-content: center;
