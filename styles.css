@@ -3,6 +3,9 @@ body {
   height:100%;
 }
 
+h1 {
+  font-size: large;
+}
 .background {
   background-image: url(assets/crowd.png);
   background-size: 100%;
@@ -54,9 +57,12 @@ section {
   font-weight: 700;
   font-size: large;
   color: #332320;
-  background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+}
+
+section * {
+  background-repeat: no-repeat;
 }
 
 .fade-in {
@@ -85,14 +91,13 @@ section {
 
 .player-icon1 {
   width: 120px;
-  margin-top: 20px;
-  background-repeat: no-repeat;
+  margin-top: 40px;
 }
 
 .player-icon2 {
   width: 80px;
   margin-top: 60px;
-  background-repeat: no-repeat;
+  margin-bottom: 20px;
 }
 
 .tictactoe {
@@ -101,6 +106,10 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.tictactoe:hover {
+  background-color: rgba(225, 204, 77, .6);
 }
 
 .quad1 {
