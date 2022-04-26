@@ -31,8 +31,13 @@ Hang out at a cafe and play a quick game of tictactoe! Play as medusa or the dir
 - Roman Colosseum theme, with the two fiercest warriors of Mod 1 (Medusa/Direwolf)
 - Users can click into the grid to place their tic tac toe tokens
 - When a player gets three in a row the wins update under their token and the game restarts
+  ![Player Win](assets/Player-Win.gif)
+- Box colors change when you hover over
+  ![Hover Color](assets/Hover-color.gif)
 - When their is a draw game no one score increases and the game resets
-- User can see who's turn it is above their icon
+  ![Draw](assets/Draw.gif)
+- User can see who's turn it is above their icon, and cannot press box again
+  ![Cannot Press Again](assets/Only-press-once.gif)
 - Crowd in back cheers when a player wins
 
 ### Future Features
