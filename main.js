@@ -54,6 +54,7 @@ function resultAnimation() {
 }
 
 function updateBoard(quadrant) {
+  quadrant.classList.add("not-allowed");
   quadrant.innerHTML = `<img width= 70% src=${tictactoe.players[tictactoe.playerTurn].token}></img>`;
   if (turnTextPlayer1.innerText === "Player 1's Turn" && tictactoe.playerTurn === 0) {
     turnTextPlayer1.innerText = "Player 1";
@@ -77,6 +78,7 @@ function resetBoard() {
   toggleMainView();
   for (var i = 0; i < tictactoeBoard.children.length; i++) {
     tictactoeBoard.children[i].innerHTML = '';
+    tictactoeBoard.children[i].classList.remove("not-allowed");
   }
   background.classList.remove("background-victory");
 }

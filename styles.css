@@ -25,7 +25,6 @@ header {
   font-size: xx-large;
 }
 
-
 html {
   margin: 0;
   border: 0;
@@ -44,6 +43,10 @@ main {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
+}
+
+.not-allowed {
+  cursor: not-allowed;
 }
 
 section {
