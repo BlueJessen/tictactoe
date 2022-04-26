@@ -34,6 +34,7 @@ class Game {
     this.board[playerChoice] = this.players[this.playerTurn].innerToken;
     this.checkWinCondition();
     this.turnSwitch();
+
   }
 
   checkWinCondition() {
@@ -41,10 +42,12 @@ class Game {
       var indices = this.winConditions[i];
       var checkSet = new Set([this.board[indices[0]], this.board[indices[1]], this.board[indices[2]]]);
       if (checkSet.size === 1 && (checkSet.has("X") || checkSet.has("O"))) {
-          this.winAction(this.board[indices[0]]);
+        this.winAction(this.board[indices[0]]);
       }
     }
+    if (!this.gameEnd) {
       this.checkForCatsGame();
+    }
   }
 
   winAction(innerToken) {

@@ -1,19 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
   <head>
     <title>TicTacToe</title>
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,600,500,700' rel='stylesheet' type='text/css'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&family=Special+Elite&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
   </head>
     <header>Tic Tac Toe</header>
-    <body>
+    <body class="background victory-background">
       <div class="wrapper">
         <section class= "player-section1">
           <h1 class="player-section1-turn">Player 1's Turn</h1>
+          <img src="assets/medusaicon.png" class="player-icon1"></img>
           <h2 id="player1">Wins 0</h2>
         </section>
         <p class = "event-text fade-in hidden">  Example Wins! </p>
-        <main>
+        <main class="hover-active" >
           <div class="tictactoe quad1"id= "A">
           </div>
           <div class="tictactoe quad2"id= "B">
@@ -35,6 +38,7 @@
         </main>
         <section class= "player-section2">
           <h1 class="player-section2-turn">Player 2</h1>
+          <img class="player-icon2" src="assets/direwolf.png"></img>
           <h2 id="player2">Wins 0</h2>
         </section>
       </div>

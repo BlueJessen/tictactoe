@@ -3,24 +3,35 @@ body {
   height:100%;
 }
 
+h1 {
+  font-size: large;
+}
+.background {
+  background-image: url(assets/crowd.png);
+  background-size: 100%;
+}
+
+.background-victory {
+  background-image: url(assets/victory.gif);
+  background-size: 100%;
+}
+
 header {
   width: 100%;
   border: 0;
   height: 10%;
   text-align: center;
-  background-color: #073B4C;
-  color: white;
   font-weight: 600;
-  font-size: x-large;
+  font-size: xx-large;
 }
+
 
 html {
   margin: 0;
   border: 0;
   width: 100%;
   height: 100%;
-  background-color: #f7fff6;
-  font-family: "Open Sans";
+  font-family: "MedievalSharp";
 }
 
 h2 {
@@ -36,7 +47,7 @@ main {
 }
 
 section {
-  background-color: #FFD166;
+  background-image: url(assets/section-pillar.png);
   width: 25%;
   height: 100%;
   margin-right: 10px;
@@ -44,10 +55,14 @@ section {
   margin-top: 10px;
   text-align: center;
   font-weight: 700;
-  font-size: x-large;
-  background-repeat: no-repeat;
-  background-size: 50%;
+  font-size: large;
+  color: #332320;
+  background-size: cover;
   background-position: center;
+}
+
+section * {
+  background-repeat: no-repeat;
 }
 
 .fade-in {
@@ -63,8 +78,9 @@ section {
 .event-text {
   height: 80%;
   width: 40%;
-  background-color: rgba(225, 225, 225, .9);
+  background-color: rgba(225, 225, 225, .6);
   display: flex;
+  font-size: xx-large;
   justify-content: center;
   align-items: center;
 }
@@ -73,20 +89,27 @@ section {
   display: none;
 }
 
-.player-section1 {
-  background-image: url(assets/snek.svg);
+.player-icon1 {
+  width: 120px;
+  margin-top: 40px;
 }
 
-.player-section2 {
-  background-image: url(assets/mushroom.svg);
+.player-icon2 {
+  width: 80px;
+  margin-top: 60px;
+  margin-bottom: 20px;
 }
 
 .tictactoe {
-  background-color: #118AB2;
+  background-color: rgba(225, 225, 225, .6);
   border: 5px solid black;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.tictactoe:hover {
+  background-color: rgba(225, 204, 77, .6);
 }
 
 .quad1 {
