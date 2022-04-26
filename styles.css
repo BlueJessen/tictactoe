@@ -18,10 +18,8 @@ header {
   border: 0;
   height: 10%;
   text-align: center;
-  background-color: #073B4C;
-  color: white;
   font-weight: 600;
-  font-size: x-large;
+  font-size: xx-large;
 }
 
 
@@ -54,7 +52,8 @@ section {
   margin-top: 10px;
   text-align: center;
   font-weight: 700;
-  font-size: x-large;
+  font-size: large;
+  color: #332320;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -70,19 +69,12 @@ section {
     100% {opacity: 1;}
   }
 
-  .animation {
-    animation: 3s;
-  }
-@keyframes {
-  0% {opacity: 1;}
-  100% {opacity: 0;}
-}
-
 .event-text {
   height: 80%;
   width: 40%;
   background-color: rgba(225, 225, 225, .6);
   display: flex;
+  font-size: xx-large;
   justify-content: center;
   align-items: center;
 }
@@ -92,7 +84,16 @@ section {
 }
 
 .player-icon1 {
-  background-image: url(assets/medusaicon.png);
+  width: 120px;
+  margin-top: 40px;
+  background-repeat: no-repeat;
+}
+
+.player-icon2 {
+  width: 80px;
+  margin-top: 60px;
+  margin-bottom: 40px;
+  background-repeat: no-repeat;
 }
 
 .tictactoe {

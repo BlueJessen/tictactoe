@@ -38,14 +38,21 @@ function playGame(playerChoice) {
 
 function checkIfGameOver(){
   if(tictactoe.gameEnd) {
-  background.classList.remove("background");
-  background.classList.add("background-victory");
+    resultAnimation();
   var winTimeout = setTimeout(winResult, 1000);
   var endGameTimeout = setTimeout(resetBoard, 3000);
   }
 }
 
 //Dom Functions
+
+function resultAnimation() {
+  if (tictactoe.gameResult !== `It was a draw! Too Bad...`){
+    background.classList.add("background-victory");
+    background.classList.remove("background");
+  }
+}
+
 function updateBoard(quadrant) {
   quadrant.innerHTML = `<img width= 70% src=${tictactoe.players[tictactoe.playerTurn].token}></img>`;
 if (turnTextPlayer1.innerText === "Player 1's Turn"){
@@ -66,11 +73,11 @@ function winResult() {
 
 function resetBoard() {
   tictactoe.resetGame()
+  background.classList.add("background");
   toggleMainView();
   for (var i = 0; i < tictactoeBoard.children.length; i++) {
     tictactoeBoard.children[i].innerHTML = '';
   }
-  background.classList.add("background");
   background.classList.remove("background-victory");
 
 }
