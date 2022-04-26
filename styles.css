@@ -3,6 +3,9 @@ body {
   height:100%;
 }
 
+h1 {
+  font-size: large;
+}
 .background {
   background-image: url(assets/crowd.png);
   background-size: 100%;
@@ -54,7 +57,6 @@ section {
   font-weight: 700;
   font-size: large;
   color: #332320;
-  background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }

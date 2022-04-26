@@ -23,7 +23,7 @@ function getEvent(event) {
         choice = i;
       }
     }
-        if(tictactoe.board[choice]=== null){
+        if(tictactoe.board[choice] === null){
           updateBoard(event.target);
           playGame(choice);
     }
