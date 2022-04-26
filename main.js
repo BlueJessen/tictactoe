@@ -55,10 +55,10 @@ function resultAnimation() {
 
 function updateBoard(quadrant) {
   quadrant.innerHTML = `<img width= 70% src=${tictactoe.players[tictactoe.playerTurn].token}></img>`;
-  if (turnTextPlayer1.innerText === "Player 1's Turn") {
+  if (turnTextPlayer1.innerText === "Player 1's Turn" && tictactoe.playerTurn === 0) {
     turnTextPlayer1.innerText = "Player 1";
     turnTextPlayer2.innerText = "Player 2's Turn";
-  } else {
+  } else if(tictactoe.playerTurn === 1) {
     turnTextPlayer1.innerText = "Player 1's Turn";
     turnTextPlayer2.innerText = "Player 2";
   }
